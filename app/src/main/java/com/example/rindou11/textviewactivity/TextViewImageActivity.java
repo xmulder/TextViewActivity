@@ -15,11 +15,17 @@ public class TextViewImageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.text_view_image_activity);
 
-        button_back=(Button)findViewById(R.id.button_intent_to_image_activity);
+        button_back=(Button)findViewById(R.id.back_to_text_view_activity);
+        button_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent_back=new Intent(TextViewImageActivity.this,TextViewActivity.class);
+                startActivity(intent_back);
+            }
+        });
 
     }
 
